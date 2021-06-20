@@ -8,6 +8,7 @@ function App(){
     const [location, setLocation] = useState({})
     const [query, setQuery] = useState('')
     const [weather, setWeather] = useState({})
+    const [err, setErr] = useState('')
 
     const search = (e) => {
       if(e.key === 'Enter'){
@@ -15,10 +16,16 @@ function App(){
           fetch(`${url}${query}`)
           .then(res => res.json())
           .then((result) => {
-               setQuery('');
-               setLocation(result.request);
-               setWeather(result.current);
-               console.log(result);               
+             if(!result.error){
+              setQuery('');
+              setLocation(result.request);
+              setWeather(result.current);
+              console.log(result);     
+             } else{
+              setErr('Ran into a problem. Please try after sometime..')
+               console.log("error")
+             }
+                         
           })
         }
 
@@ -39,7 +46,7 @@ function App(){
 
     return (
       <div className={
-        (typeof weather.temperature != 'undefined' )
+        (!err)
         ? (weather.temperature < 16) 
            ? 'app-cold' 
            : 'app' 
@@ -69,7 +76,7 @@ function App(){
                 <div className="description">{weather.weather_descriptions}</div>
               </div>
             </div>
-          ) : ('')}
+          ) : (<div className="error">{err}</div>)}
 
         </main>       
       </div>

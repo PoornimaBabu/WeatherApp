@@ -1,13 +1,102 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* main{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.app{
+    background-color: rgb(238, 216, 90);
+    background-position: bottom;
+    transition: 0.4s ease-out;
+}
+
+.app-cold{
+    background-color: rgb(158, 231, 224);
+    transition: 0.4s ease-out;
+    background-position: bottom;
+}
+
+.search-box{
+    width: 100%;
+    margin: 0 0 75px;
+    
+}
+
+.search-box .search-bar{
+    width: 100%;
+    padding: 15px;
+    font-size: 20px;    
+    color: #313131;
+
+    border-radius: 0 0 16px 16px;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-top: -50px;
+
+    appearance: none;
+    background: none;
+    border: none;
+    outline: none;
+
+    box-shadow: 0px 5px rgba(0, 0, 0 , 0.2);
+    transition: 0.4s ease;
+
+}
+
+.search-box .search-bar:focus{
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+.location-box .location{
+    color: #FFF;
+    font-size: 42px;
+    font-weight: 500;
+    text-align: center;
+    text-shadow:  1px 1.5px rgba(50, 50, 70, 0.5);
+    margin-top: 40px;
+
+}
+
+.location-box .date{
+    color: #FFF;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 300;
+    font-style: italic;
+    text-shadow: 1px 1px rgba(50, 50, 70, 0.5);
+}
+
+.weather-box{
+    text-align: center;
+}
+
+.weather-box .temperature{
+    background-color: rgba(255, 255, 255, 0.3);
+    color: grey;
+    border-radius: 16px;
+    font-size: 82px;
+    font-weight: 700;
+    margin: 20px auto;
+    position: relative;
+    display: inline-block;
+    padding: 15px 25px;
+    text-shadow: rgba(255, 255, 255, 0.5) 3px 6px;
+    text-align: center;
+    box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.weather-box .description{
+    color: #FFF;
+    font-size: 48px;
+    font-weight: 400;
+    text-shadow: rgba(50, 50, 70, 0.5) 1px 3px;
+}
+
+
+main{
+    min-height: 100vh;
+    padding: 20px;
 }
